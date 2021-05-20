@@ -9,34 +9,55 @@
 <body>
     <script>
         {
-            const obj={
-                name:'张三',
-                age:{
-                    value:18
-                }
-            }
-            const obj1={
-                name:'李四'
-            }
-            function fn(person){
-                return person?.age?.value
-            }
-           console.log( fn(obj)+5);
-           console.log( fn(obj1)+5);
+        //     const obj={
+        //         name:'张三',
+        //         age:{
+        //             value:18
+        //         }
+        //     }
+        //     const obj1={
+        //         name:'李四'
+        //     }
+        //     function fn(person){
+        //         return person?.age?.value
+        //     }
+        //    console.log( fn(obj)+5);
+        //    console.log( fn(obj1)+5);
 
         }
         {
-            function move(fn) {
-                // fn&&fn();
-                fn?.();
-            }
-            move(function(){console.log(1)})
-            move()
+            // function move(fn) {
+            //     // fn&&fn();
+            //     fn?.();
+            // }
+            // move(function(){console.log(1)})
+            // move()
         }
         {
-            const obj ={}
-            console.log(obj.a||1);
-            console.log(obj.a ?? 1);
+        //     const obj ={a:''}
+        //     console.log(obj.a||1);
+        //     console.log(obj.a ?? 1);
+        }
+        {
+            // let [a,b]=[NaN,NaN];
+            // console.log(a===b)
+            // console.log(Object.is(a,b))
+
+
+            // let [c,d]=[+0,-0];
+            // console.log(c===d);
+            // console.log(Object.is(c,d))
+        }
+        {
+            const obj1901={a:1,b:2}
+            const obj1909={c:3,}
+            Object.defineProperty(obj1909,'f',{
+                value:5, 
+                enumerable: true
+            })
+            const obj1902={d:4}
+            Object.assign(obj1901,obj1909,obj1902);
+            console.log(obj1901);
         }
     </script>
 </body>
