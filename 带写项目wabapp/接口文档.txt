@@ -1,0 +1,9 @@
+公共路径：http://localhost/zerg/public/index.php/api/v1/
+首页banner图接口：banner/1
+精选主题接口：theme?ids=1,2,3
+最近新品接口：product/recent
+分类页面获取所有分类接口：category/all
+通过分类id获取某个具体分类下的商品接口：product/by_category?id=5
+商品详情接口：product/商品id
+具体某一主题接口：theme/主题id
+

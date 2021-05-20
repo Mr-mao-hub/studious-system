@@ -1,0 +1,65 @@
+.book-container {
+    width: 100%;
+    height: 80vh;
+}
+.top-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+.top-item {
+    width: 25%;
+    height: 10vh;
+    font-size:0.36rem;
+    line-height: 10vh;
+    color: #ccc;
+}
+.top-item.active {
+    color: brown;
+    border-bottom: 2px solid brown;
+}
+.book-bottom{
+    width: 100%;
+}
+.bottom-list{
+    height: 3rem;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.bottom-img{
+    display: block;
+    height: 3rem;
+}
+.bottom-le{
+    width: 70%;
+    height: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+.bottom-le h6{
+    font-size: 0.36rem;
+    margin: 0.2rem 0;
+}
+.bottom-le  p{
+    font-size: 0.36rem;
+}
+.le{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+}
+.le span{
+    font-size: 0.36rem;
+}
+.text-le{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.lef,.ler{
+    margin-left: 0.5rem;
+}

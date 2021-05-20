@@ -1,0 +1,93 @@
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.swiper-container {
+    width: 100%;
+    height: 4.36rem;
+}  
+.swiper-slide img{
+    width:100%;
+    height: 100%;
+}
+.theme-container{
+    width: 100%;
+}
+.title{
+    width: 100%;
+    height: .88rem;
+    background-color:#fff;
+    line-height: .88rem;
+    text-align:center;
+    color: #bba07e;
+    font-size: 0.36rem;
+}
+.theme-list{
+    width: 100%;
+    display:flex;
+    /* 弹性盒子换行 */
+    flex-wrap: wrap;    
+}
+
+.theme-list .theme-item{
+    width: 50%;
+    height: 3.4rem;
+    /* 设置怪异盒模型 */
+    box-sizing: border-box;
+}
+.theme-list .theme-item:nth-child(1){
+    border-right: 1px solid #fff;
+}
+.theme-list .theme-item:nth-child(2){
+    border-left: 1px solid #fff;
+}
+.theme-list .theme-item:nth-child(3){
+    border-top: 2px solid #fff;
+    width: 100%;
+}
+.theme-list .theme-item a,.theme-list .theme-item img{
+    display: block;
+    width:100%;
+    height: 100%;
+}
+
+/* 最近新品布局 */
+.product-container .product-list{
+    padding: 0 0.2rem 0.3rem;
+    display:flex;
+    /* 定义弹性盒子方向  水平方向*/
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+.product-container .product-item{
+    width: 48%;
+    height: 2.7rem;
+    background-color:#f5f6f5;
+    margin-bottom: 0.2rem;
+}
+.product-container .product-item a{
+    display: flex;
+    /* 定义弹性盒子方向  竖直方向*/
+    flex-direction: column;
+    /* 交叉轴元素居中现实 */
+    align-items: center;
+    /* 主轴方向有缝隙 */
+    justify-content:center;
+}
+.product-container .product-item img{
+    display: block;
+    width:70%;
+    height: 70%;
+}
+.product-container .product-item .product-title{
+    font-size: 0.28rem;
+}
+.prouder-price{
+    font-size: 0.2rem;
+}
+.footer{
+    width: 100%;
+    position: fixed;
+    bottom:0;
+    left:0;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>标签模板</title>
+</head>
+<body>
+    <script>
+        function fn(arr,name,paw){
+            let s =name.replace('/</g','&lt;');
+            s=s.replace(/>/g,'&gt;');
+            // console.log(arguments)
+            return arr[0]+s+arr[1]+paw+arr[2];
+        }
+        var name='张三';
+        var paw='123456';
+        // fn('<p>用户名为：'+name+'密码为：'+paw+'</p>')
+       let r= fn`<p>用户名为：${'<script>木马程序<\/script>'+name}密码为：${paw}</p>`;
+        console.log(r)
+        // alert`123`;//标签模板是调用某个函数的一种特殊形式
+        {
+            function  fn(str){
+                console.log(str[0]);
+                console.log(str.raw[0]);
+
+            }
+            fn`hello\nworld`;
+        }
+    </script>
+</body>
+</html>

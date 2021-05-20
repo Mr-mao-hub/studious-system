@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    {
+        // var a='age';
+        // var es5={
+        //     a:a,
+        //     showA:function(){
+        //         console.log(this.a)
+        //     }
+        // }
+        // var age4=20;
+        // const es6={
+        //     a,
+        //     ['age'+4]:age4,
+        //     [{}]:1,
+        //     showA(){console.log(this.a)}
+        // }
+        // console.log(es6);
+        // es5.showA();
+        // es6.showA();
+    }
+    {
+        const obj={
+            a:1,
+            b:2
+        };
+        Object.defineProperty(Obj,'age',{
+            value:18,
+            writable:false,
+            enumerable:false,
+            configurable:true
+        })
+    }
+
+    </script>
+</body>
+</html>

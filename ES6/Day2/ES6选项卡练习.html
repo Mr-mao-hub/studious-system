@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选项卡</title>
+    <link rel="stylesheet" href="../../自写项目 copy/src/css/reset.css">
+    <style>
+        .tab-container{
+            width: 500px;
+            height: 500px;
+            text-align: center;
+            margin:auto;
+            border: 1px solid red;
+        }
+        .tab-name{
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content:space-around;
+        }
+        .name-item{
+            width: 100%;
+            font-size: 36px;
+            line-height:50px;
+        }
+        .name-item.active{
+            color: blue;
+            background-color:pink;
+        }
+        .tab-list{
+            width: 100%;
+            height:450px;
+        }
+        .tab-item{
+            width: 100%;
+            height:100%;
+        }
+        .tab-item a{
+            color: red;
+            font-size:100px;
+            line-height: 450px;
+        }
+        .tab-item.active{
+            background-color:antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab-container " id="tab">
+        <ul class="tab-name">
+            <li class="name-item active">1</li>
+            <li class="name-item">2</li>
+            <li class="name-item">3</li>
+
+        </ul>
+        <ul class="tab-list">
+            <li class="tab-item active">
+               <a href="#">🐂🍺</a> 
+            </li>
+        </ul>
+    </div>
+    <script>
+        
+        function tab(id){
+            console.log(id)
+            this.name=document.querySelector(".tab-name");
+            let item=document.querySelector(".name-item");
+            let con=document.querySelector(".tab-list");
+            let tab=document.querySelector(".tab-item");
+        }
+        let tab1=document.querySelector(".tab-container");
+
+        new tab(tab1)
+
+    </script>
+</body>
+</html>

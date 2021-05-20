@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        {
+            let [a=100, b, c,d=4]=[1,2,3];
+            console.log(a,b,c,d)
+        }
+        {
+            let [a=11,b=12,c=13,d=14]=[null,undefined,5,'']//数组的结构赋值
+            console.log(a,b,c,d)
+        }
+        {
+            let {a:age,b:sex,d} = {a:18,b:'男',d:4};//对象的结构赋值 d相当于d:d
+            console.log(age,sex,d)
+        }
+        {
+            let[a,b,c]='hello'
+            console.log(a,b,c)
+        }
+        {
+            let obj={
+                p:["hello",{y:'wrold'}]
+            }
+            // let x=obj.p[0];
+            // let y=obj.p[1].y;
+            let {p:[x,{y}]}=obj;
+            console.log(x,y)
+        }
+        {
+            const node={
+                loc:{
+                    start:{
+                        line:1,
+                        colimn:5
+                    }
+                }
+            }
+            let {loc,loc:{start},loc:{start:{line}}}=node;
+                console.log(loc,start,line)
+        }
+        {
+            let {toString:fn}=true;
+            console.log(fn)
+        }{
+            let metaDate={
+                title:'abc',
+                tast:{
+                    title:'test',
+                    desc:'详情描述'
+                }
+            }
+            let {title:a,tast:{title:b}}=metaDate;
+            console.log(a,b)
+        }
+    </script>
+</body>
+</html>

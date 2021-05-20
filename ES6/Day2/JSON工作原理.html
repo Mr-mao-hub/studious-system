@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON工作原理</title>
+    <style>
+        body{
+            height: 3000px;
+        }
+    </style>
+</head>
+<body>
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script>
+        // function fn(data){
+        //     console.log(data);
+        // }
+        // document.body.onclick=function(){
+        //     var oS=document.createElement('script');
+        //     oS.src='https://suggest.taobao.com/sug?q=a&callback=fn';
+        //     document.body.appendChild(oS);
+        // }
+        $.ajax({
+            url:'https://suggest.taobao.com/sug',//请求地址
+            type:'get',//请求方式
+            data:{
+                q:'b'//需要携带的参数
+            },
+            jsonp:'callback',//可以通过该参数将函数传递到后
+            dataType:'jsonp',//返回的数据格式
+            jsonpCallback:'fn',
+            success:function(res){
+                console.log(res);
+            }
+            
+        })
+        function fn(data){
+            console.log(data);
+        }
+    </script>
+</body>
+</html>

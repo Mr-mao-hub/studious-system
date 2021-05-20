@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的name属性</title>
+</head>
+<body>
+    <script>
+        {
+            function fn(){}
+            console.log(fn.name)//fn
+        }
+        {
+            let fn=function (){}
+            console.log(fn.name);//fn
+        }
+        {
+            let fn=function fn1(){}
+            console.log(fn.name)//fn1
+        }
+        {
+            let fn=new Function();
+            console.log(fn.name)//anonymous
+        }
+        {
+            let obj1={
+                x:3
+            }
+            let obj2={
+                x:5,
+                showX:function (){
+                    console.log(this.x);
+                }
+            }
+            // obj2.showX()
+            obj2.showX.call(obj1);
+            obj2.showX.apply(obj1);//用括号里的对象来代替前面函数中的this
+            obj2.showX.bind(obj1)();//bind函数调用时执行
+        }
+    </script>
+</body>
+</html>

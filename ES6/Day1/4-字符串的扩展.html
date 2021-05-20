@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串的扩展</title>
+</head>
+<body>
+    <script>
+        {
+            let str='\u{2F517}'
+        //    alert(str)
+        }
+        {
+            var  str='\u{20bba}';
+            console.log(str)
+        }
+        {
+            var  str='a𠮺b';
+            console.log(str.charCodeAt(1).toString(16))//d842超出范围了不认识
+            console.log(str.codePointAt(1).toString(16))//20bba
+        }
+        {
+            var str ='';//保存由大小写字母和数字组成的验证码；
+            //数字 48-57  大写：65-90  小写97-122
+            for(var i=0; str.length<4;i++){
+                var num=Math.floor(Math.random()*(122+1-48)+48)
+                if(num>=48 && num<=57 || num>=65&& num<=90 || num>=97&& num<=122){
+                    str+=String.fromCharCode(num); //fromCharCode返回编码对应的字符
+                }
+            }
+            console.log(str)
+        }
+        {
+            console.log(String.fromCharCode('0x20bba'))
+            console.log(String.fromCodePoint('0x20bba'))
+        }
+        {
+            let str='hello';
+            console.log(str.includes('b'))//是否包含  找的到返回true 找不到返回false
+            console.log(str.includes('l'));
+            console.log(str.indexOf('l'));//2
+            console.log(str.indexOf('b'));
+        }
+        {
+            let str='234hello';
+            // let reg=/^\d.+$/;
+            // console.log(reg.test(str));
+            console.log(str.startsWith('2'));//判断一个字符串是否以‘ ’开头
+            console.log(str.endsWith('2'));//判断一个字符串是否以‘ ’结尾
+        }
+        {
+            let str ='hello';
+            console.log(str.repeat(3)) //重复
+        }
+    </script>
+</body>
+</html>

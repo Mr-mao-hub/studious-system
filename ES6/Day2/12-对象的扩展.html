@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        {
+            var a = 'age';
+            var es5 = {
+                a: a,
+                showA: function () {
+                    console.log(this.a);
+                }
+            }
+            var age4 = 20;
+            const es6 = {
+                a,
+                ['age' + 4]: age4, //不能简写
+                [{}]: 1,
+                showA() {
+                    console.log(this.a)
+                }
+            }
+            // console.log(es6);
+            // es5.showA();
+            // es6.showA();
+        } {
+            const obj = {
+                a: 1,
+                b: 2
+            };
+            Object.defineProperty(obj, 'age', {
+                value: 18,
+                // writable:false,
+                // enumerable:true
+                // configurable:true
+            });
+            // 查询对象的某个属性的描述对象
+            console.log(Object.getOwnPropertyDescriptor(obj, 'age'));
+            console.log(Object.getOwnPropertyDescriptor(obj, 'a'));
+            console.log('未修改前', obj.age);
+            // obj.age = 20;
+            delete obj.age;
+            console.log('修改后', obj);
+            // for(let i in obj){console.log(i)};
+        }
+
+        {
+            const obj = {};
+            // 要求：obj添加a,b两个属性，但是a不可修改，b不可删除
+            Object.defineProperties(obj, {
+                'a': {
+                    value: 1,
+                    writable: false,
+                    enumerable: true,
+                    configurable: true
+                },
+                'b': {
+                    value: 2,
+                    writable: true,
+                    enumerable: true,
+                    configurable: false
+                },
+                'c': {
+                    get() {
+                        return aa;
+                    }, //obj.c  =>  会触发get函数
+                    set(v) {
+                        if (v >= 18) {
+                            aa = '可以考驾驶证'
+                        } else {
+                            aa = '不能考驾驶证'
+                        }
+                    } //obj.c = 值  会触发set函数，值会被当成set函数的参数
+                }
+            })
+            obj.c = 15;
+            console.log(obj.c); //能不能考驾驶证
+        }
+
+        {
+            const obj = {
+                // level
+                // 取值函数
+                get level() {
+                    return a;
+                },
+                // 赋值函数
+                set level(v) {
+                    switch (v) {
+                        case '龙':
+                            a = '总经理';
+                            break;
+                        case '班副':
+                            a = '组长';
+                            break;
+                        case '宁':
+                            a = '组员';
+                            break;
+                    }
+                }
+
+            }
+            obj.level = '班副';
+            console.log(obj.level)
+        }
+
+        {
+            /* 
+                对象的扩展
+                定义对象属性的方法：obj.属性  obj['属性']
+                ①： obj = { ['属性']:值 }
+                ②：Object.defineProperty()
+                   Object.defineProperties()
+                   作用：可以控制外界对该属性的操作
+                ③：取值、赋值函数
+                    作用：根据设置的属性，可以返回不同的内容3            
+            */
+        }
+        {
+        //     const obj={'a':1};
+        //     Object.defineProperty(obj,'b',{
+        //         value:2,
+        //         enumerable:false,
+        //     })
+        //     for (let key of Object.keys(obj)){
+        //         console.log(key);
+        //     }
+        //     for (let v of Object.values(obj)){
+        //         console.log(v);
+        //     }
+        //     for (let [k,v] of Object.entries(obj)){
+        //         console.log(k,v);
+        //     }
+        }
+        {
+            const obj={
+                skill(){},
+                set age(v){value=v},
+                get age(){return value}
+            }
+            console.log(obj.skill.name)
+            //拿到属性的描述对象
+            const desObj=Object.getOwnPropertyDescriptor(obj,'age');
+            console.log('取值函数的名字',desObj.get.name)
+            console.log('赋值函数的名字',desObj.set.name)
+
+        }
+    </script>
+</body>
+
+</html>

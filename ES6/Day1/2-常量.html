@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常量</title>
+</head>
+<body>
+    <script>
+        {
+            const PI=Math.PI;//声明常量用const 常量是不会改变的量  不可重复声明 只能在块级作用域里有效  声明常量时必须立即赋值
+            console.log(PI);
+        }
+        {
+            //引用数据类型内容可以改变  但是地址不变  不能赋值
+            const arr=[1,2,3,4,];
+            arr.push(5);
+            console.log(arr);
+        }
+        {
+            var a=500;
+            console.log(window.a)
+            let b=700;
+            console.log(b)
+        }
+    </script>
+</body>
+</html>

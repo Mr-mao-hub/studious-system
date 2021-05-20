@@ -1,0 +1,82 @@
+/* 分类主体布局 */
+.category-main{
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    display:flex;
+
+}
+/* 左侧 */
+.category-left{
+    /* flex: 0 0 2rem; */
+    width:1.6rem;
+    height: 100%;
+    border-right: 1px solid #eee;
+}
+.category-item{
+    font-size: 0.32rem;
+    line-height:0.8rem;
+    text-align:center;
+}
+.category-item.active{
+    color: #ab956d;
+    border-left: 4px solid #ab956d;
+}
+
+/* 右侧 */
+.category-right{
+    flex: 1;
+    padding:0.4rem;
+}
+.header-img{
+    width: 100%;
+    height: 2rem;
+}
+.category-title{
+    font-size:0.28rem;
+    color:#ab956d;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.category-title::before,.category-title::after{
+    content:"";
+    display:block;
+    width: 0.7rem;
+    height: 2px;
+    background-color: #c4c4c4;
+    margin: 0 0.2rem;
+}
+.category-product{
+    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+}
+.product-item{
+    width: 33.3%;
+    margin-bottom: 0.1rem;
+}
+.product-item a{
+    display: block;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.product-item img{
+    width: 80%;
+    height:1.2rem;
+}
+.product-item p{
+    font-size:0.2rem;
+    text-align: center;
+}
+
+
+
+
+.footer{
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}

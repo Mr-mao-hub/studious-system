@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组的扩展</title>
+</head>
+<body>
+    <p></p>
+    <p></p>
+    <p></p>
+    <script>
+        var arr=[1,2,3,4,5];
+        console.log(typeof arr)
+        console.log(arr instanceof Array)
+        console.log(Array.isArray(arr))
+
+        console.log(Array.of(1,2,3,4))
+
+        {let aPm=document.getElementsByTagName('p');
+        console.log(aPm)
+        // let aPm1=Array.from(aPm);
+        let aPm1=[...aPm];
+        aPm1.push(1)
+        console.log(aPm1)}
+        {
+            //  Array.from()把一些伪数组或者可遍历的对象集合转化为数组 
+            let obj ={0:'a',1:'b',2:'c',length:3};
+            let arr=Array.from(obj,function(item){return item+100});
+            console.log(arr)
+        }
+        {
+            //fill(参数,参数2,参数3)
+        //   作用：使用给定值，填充一个数组。 
+        //   参数说明：参数1：填充的值；参数2（可选）：填充起始位置，参数3（可选）：填充结束位置（不包括结束位置）
+
+            let arr=['a', 'b', 'c','d'];
+            arr.fill(5,1,3);
+            console.log(arr)
+        
+        }
+        {
+            let arr=['a', 'b', 'c','d'];
+            arr.copyWithin(0,2,3)
+            console.log(arr)
+
+        }
+        {
+            let arr=['a', 'b', 'c','d','e'];
+            arr.copyWithin(1,3,4);
+            console.log(arr)
+        }
+        {
+            let arr=[].copyWithin.call({length: 5, 3: 1}, 0, 3)
+            //转换
+            // [].copyWithin.call({length: 5, 3: 1}, 0, 3)   =={0:1,3:1}
+            console.log(arr)
+            
+        }
+        {
+            let arr=['a', 'b', 'c','d'];
+            for(let key of arr.keys()){//单遍历下标
+                console.log(key)
+            }
+            for(let value of arr.values()){//单遍历值
+                console.log(value)
+            }
+            for(let[key,value] of arr.entries()){//遍历结构赋值  下标和值都遍历
+                console.log(key,value)
+            }
+        }
+        {
+            let arr=[1,2,50,101,433];
+            var el=arr.find(function(item){
+                return item>100;
+            })
+            console.log('符合条件的元素：'+el)
+        }
+        {
+            let arr=[1,2,50,101,433];
+            var el=arr.findIndex(function(item){
+                return item>100;
+            })
+            console.log('符合条件的下标：'+el)
+            console.log(arr.includes(50))
+        }
+    </script>
+</body>
+</html>
