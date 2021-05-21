@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数值的扩展</title>
+</head>
+<body>
+    <script>
+        // console.log(0b101011);//43
+        // console.log(0o53);//43
+        // console.log(0x3f);//63
+        {
+            // 将十进制转其他进制
+            let num=20;
+            // console.log(num.toString(2)) 
+            
+        }
+        {
+            // let num='123nasidaf123';
+            // console.log(parseInt(num));
+            // console.log(Number.parseInt(num));
+            // console.log(Number(num))
+        }
+        {
+            let num=Math.pow(2,1024);
+            // console.log(num)
+            // console.log(Number.isFinite(num)); //isFinite判断一个数是否是有限的
+        }
+        {
+        //     console.log(0.1+0.2 === 0.3)
+        //     console.log('极小的常量'+Number.EPSILON);
+        }
+        {   
+            let sum=0.1+0.2;
+            // if(sum-0.3<Number.EPSILON){
+            //     console.log('0.1+0.2=0.3');
+            // }else{
+            //     console.log('0.1+0.2!=0.3');
+            // }
+        }
+        {
+            // let num=Math.pow(2,52);
+            let num=2 ** 53;//作用相当于Math.pow()
+            //console.log(Number.isSafeInteger(num));//超出2的52次已经不识别这个数了
+            // console.log(num);
+            // console.log(num+1)
+            //0 <= num < 2**53:准确数
+            // 2**53 <=num <2**1024:可以用数表示出来但是不准确
+            //num<=2**1024:无法表示，用infinity表示
+            // console.log('安全数',2**52);//安全数
+            // console.log('能表示但是不准确的数',2**53);//不准确的数
+            // console.log(2**53+1);//不准确的数
+            // console.log('超出范围无法表示的数',2**1025)//超出范围无法表示的数返回infinity
+            // console.log('最大安全整数：',Number.MAX_SAFE_INTEGER)
+
+        }
+        {
+            let num=-20.7;
+            // console.log(Math.trunc(num))
+            //向上 20.7--21  -20.7-- -20
+            //向下 20.7--20  -20.7-- -21
+            //四舍五入 20.7--21  -20.7 -- -21
+        }
+        {
+            let num=5;
+            // console.log('5',Math.sign(num))
+            // console.log('-5',Math.sign(-5))
+            // console.log('0',Math.sign(0))
+            // console.log('-0',Math.sign(-0))
+            // console.log('123Abc',Math.sign('123Abc'));
+
+        }
+        {
+            let num=4**2;
+            console.log(Math.sqrt(81));//计算一个数的平方根   2次方
+            console.log(Math.cbrt(125));//计算一个数的立方根  3次方
+        }
+        {
+            //沟谷定理   斜边平方=直边平方和
+            let [a,b]=[3,4];
+            //斜边的平方和
+            let s=a**2 +b**2;
+            let c=Math.sqrt(s)
+            console.log('斜边是：',c);
+            console.log(Math.hypot(a,b))//返回所有参数的平方和的平方根
+
+        }
+    </script>
+
+</body>
+</html>

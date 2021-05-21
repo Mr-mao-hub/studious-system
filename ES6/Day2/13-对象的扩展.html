@@ -55,9 +55,19 @@
                 value:5, 
                 enumerable: true
             })
-            const obj1902={d:4}
-            Object.assign(obj1901,obj1909,obj1902);
+            const obj1902={d:{
+                num:"$800万"
+            }}
+            const obj1908={d:{count:'￥100亿'}}
+            const obj1907={get e(){return 6}}
+            Object.assign(obj1901,obj1909,obj1902,obj1908,['侯一','王二','张三','李四'],obj1907);
+            obj1902.d.num ='$800万';
             console.log(obj1901);
+        }
+        {
+            const arr=[['a',1],['b',2],['c',3]];
+            const obj=Object.fromEntries(arr);
+            console.log(obj)
         }
     </script>
 </body>
